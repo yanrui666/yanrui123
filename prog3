@@ -1,0 +1,27 @@
+#include<iostream>
+#include<fstream>
+using namespace std;
+
+void ArraySum (int n,int m1,int m2)
+{
+int *a=new int[n];
+int sum=0;
+ifstream in("D:\\yy.txt");
+for(int i=0;in>>a[i],i<n;i++)
+if(i>=m1&&i<=m2)
+sum+=a[i];
+cout<<"元素之和为"<<sum<<endl;
+delete []a;
+}
+int main (void)
+{
+int m1,m2;
+cout<<"第一个数组下标"<<" "<<"第二个数组下标";
+cin>>m1;
+cin>>m2;
+int n;
+n=m2-m1+1;
+cout<<"长度:"<<n<<endl;
+ArraySum(n,m1,m2);
+return 0;
+}
