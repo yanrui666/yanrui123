@@ -6,20 +6,22 @@ public class TestTriangle {
 	@Test
     public void testIsTriangle1(){
         Triangle t = new Triangle(1,1,1);
-        assertFalse(t.isTriangle(t));
+        assertEquals("Regular",t.getType(t));
+        
     }
 
     @Test
     public void testIsTriangle2(){
         // according to the mutant, this test case should fail
         Triangle t = new Triangle(2,2,3);
-        assertFalse(t.isTriangle(t));
+        assertEquals("Isoceles",t.getType(t));
     }
 
     @Test
     public void testIsTriangle3(){
         Triangle t = new Triangle(1,2,3);
-        assertFalse(t.isTriangle(t));
+        
+        assertEquals("Illegal",t.getType(t));
     }
    // 下面是添加你设计的测试用例
    // *****
